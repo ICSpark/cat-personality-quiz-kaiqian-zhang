@@ -82,18 +82,25 @@ function loadQuestion(ID) {
     
     // Step 1
     let questionText = document.getElementById('question-text');
+    let questionImage = document.getElementById('question-image');
+    let questionChoice = document.getElementById('choices');
     
     // Step 2
     questionText.innerHTML = questions[ID].text;
-    
+    questionImage.src = questions[ID].image;
+
     // Step 6
     
     for (const [choice, personality] of Object.entries(questions[ID].choices)) {
         // Step 3
+        let button = document.createElement("button");
+        button.innerHTML = choice;
+        button.className = "choice-button";
         
         // Step 4
-        
+        questionChoice.appendChild(button);
         // Step 5
+        
         
     }
 }
